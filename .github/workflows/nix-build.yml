@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - name: nix fmt
         run: nix fmt -- --check **/*.nix
       - name: nix build
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - name: nix build
         run: nix build .#espanso-wayland
 
@@ -37,7 +37,7 @@ jobs:
         run: |
           rustup update
           rustup target add aarch64-apple-darwin x86_64-apple-darwin
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - name: nix build
         run: |
           nix build .#packages.aarch64-darwin.espanso
