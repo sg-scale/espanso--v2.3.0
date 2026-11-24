@@ -60,7 +60,7 @@ jobs:
             --features vendored-tls
       - name: Clippy
         run: cargo clippy --all-targets --features=modulo,vendored-tls -- --deny warnings
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - name: nix fmt
         run: nix fmt -- --check **/*.nix
       # This step fails to find `xcb/xcb.h`
@@ -103,7 +103,7 @@ jobs:
         run: cargo clippy --features=modulo,vendored-tls,wayland -- --deny warnings
       # leaving this nix because is quite fast. macOS in the other hand takes
       # an hour to complete
-      - uses: cachix/install-nix-action@v31
+      - uses: cachix/install-nix-action@v32
       - name: nix build
         run: nix build .#espanso-wayland
 
